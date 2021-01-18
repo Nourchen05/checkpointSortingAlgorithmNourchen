@@ -1,0 +1,15 @@
+PROCEDURE TRI_INSERTION(VAR T:ARRAY_OF INTEGER)
+VAR
+    i:INTEGER; //un compteur
+    j,a:INTEGER;
+BEGIN
+    FOR i FROM 2 TO T.length-1 STEP 1 DO
+        a:=T[i]; 
+        j:=i;
+        WHILE ((j>1) and (T[i-1]>a)) DO
+            T[j]:=T[j-1];
+            j:=j-1;
+        END_WHILE
+        T[j]:=a;
+    END_FOR
+END
